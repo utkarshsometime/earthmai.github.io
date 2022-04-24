@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+<style>
+
+#gallery{
+  -webkit-column-count:4;
+  -moz-column-count:4;
+  column-count:4;
+  
+  -webkit-column-gap:20px;
+  -moz-column-gap:20px;
+  column-gap:20px;
+}
+@media (max-width:1200px){
+  #gallery{
+  -webkit-column-count:3;
+  -moz-column-count:3;
+  column-count:3;
+    
+  -webkit-column-gap:20px;
+  -moz-column-gap:20px;
+  column-gap:20px;
+}
+}
+@media (max-width:800px){
+  #gallery{
+  -webkit-column-count:2;
+  -moz-column-count:2;
+  column-count:2;
+    
+  -webkit-column-gap:20px;
+  -moz-column-gap:20px;
+  column-gap:20px;
+}
+}
+@media (max-width:600px){
+  #gallery{
+  -webkit-column-count:1;
+  -moz-column-count:1;
+  column-count:1;
+}  
+}
+#gallery img,#gallery video {
+  width:100%;
+  height:auto;
+  margin: 4% auto;
+  box-shadow:-3px 5px 15px #000;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.modal-img,.model-vid{
+  width:100%;
+  height:auto;
+}
+.modal-body{
+  padding:0px;
+}
+
+</style>
+
+
+
+
+</head>
+<body>
+
+
+    <div class="wrapper">
+        <h1 class="h1"> EARTHMAI FOUNDATION</h1>
+       <p1> <q>Earthmai foundation established in 2020 and registered as charitable trust in 2021 and with the experience of working in the areas of education, public welfare, greenery and healthcare.</q></p>
+
+
+        <div class="pill-nav">
+            <a  href="index.html">Home</a>
+            <a class="active" href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </div><br>
+    
+       <a href="donate.html" class="btn btn-white btn-				 animate">DONATE</a><br><br>
+       
+       <div id="gallery" class="container-fluid">  
+
+
+            <video controls autoplay>
+           <source src="movie.mov" type="video/mp4">
+           </source>
+         </video>
+         <img src="" class="img-responsive">
+         <img src="000003.jpg" class="img-responsive">
+         <img src="000004.jpg" class="img-responsive">
+         <img src="000006.jpg" class="img-responsive">
+         <img src="000007.jpg" class="img-responsive">
+         <img src="000008.jpg" class="img-responsive">
+         <img src="000009.jpg" class="img-responsive">
+         <img src="000013.jpg" class="img-responsive">
+         <img src="000017.jpg" class="img-responsive">
+         <img src="000018.jpg" class="img-responsive">
+         <img src="000023.jpg" class="img-responsive">
+         <img src="000020.jpg" class="img-responsive">
+         <video controls autoplay>
+         <source src="Movie2.mov" type="video/mp4">
+        </source></video>
+
+         <img src="000028.jpg" class="img-responsive">  
+         <img src="000028.jpg" class="img-responsive">
+         <img src="000030.jpg" class="img-responsive">
+         <img src="000041.jpg" class="img-responsive">        
+         <img src="000042.jpg" class="img-responsive">
+       <img src="000043.jpg" class="img-responsive">
+       <img src="000044.jpg" class="img-responsive">
+       <img src="000045.jpg" class="img-responsive">
+       <img src="000049.jpg" class="img-responsive">
+       <img src="000050.jpg" class="img-responsive">
+       <img src="000052.jpg" class="img-responsive">
+       <img src="000055.jpg" class="img-responsive">
+       <img src="000057.jpg" class="img-responsive">
+       </div>
+       <video controls autoplay>
+       <source src="Movie3.mov" type="video/mp4">
+    </source></video>
+       
+       <div id="myModal" class="modal fade" role="dialog">
+         <div class="modal-dialog">
+       
+           <!-- Modal content-->
+           <div class="modal-content">
+             <div class="modal-body">
+             </div>
+           </div>
+       
+         </div>
+       </div>
+
+
+
+
+
+
+
+    </div>
+<script>
+
+$(document).ready(function(){
+  $("img").click(function(){
+  var t = $(this).attr("src");
+  $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
+  $("#myModal").modal();
+});
+
+$("video").click(function(){
+  var v = $("video > source");
+  var t = v.attr("src");
+  $(".modal-body").html("<video class='model-vid' controls><source src='"+t+"' type='video/mp4'></source></video>");
+  $("#myModal").modal();  
+});
+});//EOF Document.ready
+</script>
+</body>
+</html>
